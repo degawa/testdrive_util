@@ -3,7 +3,7 @@ This repository provides procedures for me to improve the convenience of test-dr
 
 ## occurred
 `occurred` function returns `.true.` if the argument `error` is allocated.
-This function is introduced with a purpose of writing `if(occured(error))` instead of `if(allocated(error))` to improve readability of codes.
+This function is introduced with a purpose of writing `if(occurred(error))` instead of `if(allocated(error))` to improve readability of codes.
 
 ```Fortran
 call check(error, 1 + 2 == 3)
