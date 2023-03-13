@@ -11,7 +11,7 @@ program test_occurred
     stat = 0
 
     testsuites = [ &
-                 new_testsuite("test suite for function occurred", &
+                 new_testsuite("occurred", &
                                collect_test_occurred) &
                  ]
 
