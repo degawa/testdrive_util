@@ -8,7 +8,9 @@ module testdrive_util
     character(len=*), private, parameter :: fmt = '("#", *(1x, a))'
 
 contains
-    !> utility function allowing to write `if(occurred(error))`
+    !> returns `.true.` when `error` is allocated.
+    !>
+    !> this function allows to write `if(occurred(error))`
     !> instead of `if(allocated(error))`
     logical function occurred(error)
         implicit none
@@ -18,7 +20,7 @@ contains
         occurred = allocated(error)
     end function occurred
 
-    !> a subroutine running tests
+    !> runs test suites.
     subroutine run_test(testsuites)
         use, intrinsic :: iso_fortran_env, only: error_unit
         implicit none
