@@ -4,8 +4,13 @@ module testdrive_util
     private
     public :: occurred
     public :: run_test
+    public :: to_string
 
     character(len=*), private, parameter :: fmt = '("#", *(1x, a))'
+
+    interface to_string
+        procedure :: to_string_l
+    end interface
 
 contains
     !> returns `.true.` when `error` is allocated.
@@ -39,4 +44,17 @@ contains
             error stop
         end if
     end subroutine run_test
+
+    !> returns "T"/"F" when l is `.true.`/`.false.`
+    function to_string_l(l) result(string)
+        implicit none
+        logical, intent(in) :: l
+        character(1) :: string
+
+        if (l) then
+            string = "T"
+        else
+            string = "F"
+        end if
+    end function to_string_l
 end module testdrive_util
