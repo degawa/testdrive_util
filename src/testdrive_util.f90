@@ -75,7 +75,7 @@ contains
     !>allocate `error` if an error occurs.
     !>
     !>The unit specified by `unit_number` must be open.
-    subroutine get_actual_value_from_unit_str(error, unit_number, string)
+    subroutine get_actual_value_in_line_as_str_from_unit(error, unit_number, string)
         implicit none
         type(error_type), allocatable, intent(out) :: error
         integer(int32), intent(in) :: unit_number
@@ -108,6 +108,8 @@ contains
         end if
 
         string = trim(buffer)
+    end subroutine get_actual_value_in_line_as_str_from_unit
+
     !>get value from beginning to EOF
     !>from unit specified by `unit_number`
     !>and stores it in `string`.
