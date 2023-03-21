@@ -18,6 +18,7 @@ module testdrive_util
     end interface
 
     interface get_actual_value
+        procedure :: get_actual_value_in_line_as_str_from_unit
     end interface
 
     interface get_all_actual_value
@@ -69,12 +70,17 @@ contains
         end if
     end function to_string_l
 
-    !>get string from unit specified by `unit_number`
+    !>get value written on the first line
+    !>from unit specified by `unit_number`
     !>and stores it in `string`.
     !>
     !>allocate `error` if an error occurs.
     !>
     !>The unit specified by `unit_number` must be open.
+    !>
+    !>@note `string` is allocated as 0 length string if the unit is empty.
+    !>
+    !>@warning this procedure cannot read tailing spaces.
     subroutine get_actual_value_in_line_as_str_from_unit(error, unit_number, string)
         implicit none
         type(error_type), allocatable, intent(out) :: error
