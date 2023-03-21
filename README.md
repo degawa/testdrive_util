@@ -40,9 +40,9 @@ print *, "expected "//to_string(.true.)//", but got "//to_string(.false.)
 ```
 
 ### get_actual_value
-`get_actual_value` is a helper subroutine to somewhat simplify testing of procedures with output to a unit.
+`get_actual_value` and `get_all_actual_value` are helper subroutines to somewhat simplify testing of procedures with output to a unit.
 
-`get_actual_value` rewinds the opened unit and reads contents at the first line as a string.
+`get_actual_value` rewinds the opened unit and reads contents at the first line as a string. `get_all_actual_value` reads contents from the beginning to EOF.
 
 The following code is a `get_actual_value` usage example for testing a log message output of the logger provided by stdlib.
 
