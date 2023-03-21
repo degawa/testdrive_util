@@ -17,4 +17,6 @@ library = true
 
 [dependencies]
 test-drive = {git = "https://github.com/fortran-lang/test-drive"}
+
+[dev-dependencies]
 stdlib = { git="https://github.com/fortran-lang/stdlib", branch="stdlib-fpm" }
