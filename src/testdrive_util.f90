@@ -12,7 +12,7 @@ module testdrive_util
     character(len=*), private, parameter :: fmt = '("#", *(1x, a))'
 
 #if !defined (UTIL_BUFFER_LENGTH) || (defined UTIL_BUFFER_LENGTH && UTIL_BUFFER_LENGTH<1)
-#define UTIL_BUFFER_LENGTH 256
+#define UTIL_BUFFER_LENGTH 512
 #endif
     integer(int32), private, parameter :: default_buffer_length = UTIL_BUFFER_LENGTH
 
